@@ -1,39 +1,30 @@
-# Pulchér Skin – GitHub Pages
+# Pulchér Skin – nettside og separat bookingdemo
 
-Komplett statisk nettside med HTML, CSS, JavaScript og lokale bilder. Ingen installasjon, API-nøkler eller bygging er nødvendig.
+Nettsiden ligger i roten. Bookingdemoen ligger i booking-demo/ og er et separat prosjekt.
+Ingen installasjon eller bygging er nødvendig. Ren HTML, CSS og JavaScript.
 
-## Publiser via GitHub
+## Publiser nettsiden på GitHub Pages
+1. Pakk ut ZIP-filen.
+2. Opprett et repository på GitHub.
+3. Last opp innholdet, slik at index.html ligger i roten av repositoryet.
+4. Åpne Settings > Pages. Velg Deploy from a branch, main og / (root). Lagre.
+5. Åpne adressen GitHub viser når publiseringen er ferdig.
 
-1. Opprett et offentlig repository, for eksempel `pulcher-skin`.
-2. Pakk ut ZIP-filen. Last opp **innholdet** slik at `index.html`, `style.css`, `app.js` og `assets/` ligger direkte i roten av repositoryet. Ikke last opp selve ZIP-filen.
-3. Lagre filene på `main` (Commit changes).
-4. Åpne **Settings → Pages**.
-5. Velg **Deploy from a branch**, deretter **main** og **/(root)**. Trykk **Save**.
-6. Åpne adressen som vises i Pages når publiseringen er ferdig.
+## Separat bookingdemo
+Opprett et annet repository og last opp innholdet INNE I booking-demo/ i roten der.
+Aktiver Pages på samme måte. Du kan utelate booking-demo/ fra nettsidens repository.
+Demoen lagrer kun testbestillinger i nettleseren. Den har ingen felles database,
+innlogging eller e-post/SMS og skal ikke brukes til reelle kundebestillinger.
 
-Den inkluderte `.nojekyll`-filen lar GitHub publisere filene uten Jekyll-behandling. Dersom filen er skjult i filutforskeren og ikke følger opplastingen, kan den opprettes som en tom fil i GitHub.
+## Lokal testing
+Kjør python3 -m http.server 8000 fra mappen, og åpne http://localhost:8000.
 
-Offisiell veiledning: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+## Redigering
+- index.html: innhold, priser, kontaktinformasjon og bookinglenker.
+- style.css: farger, typografi og mobiltilpasning.
+- app.js: karusell og behandlingsdialoger.
+- assets/: KI-genererte behandlingsillustrasjoner, ikke bilder fra salongen.
 
-## Test lokalt
-
-Åpne `index.html` i nettleseren. Alternativt, fra denne mappen:
-
-```bash
-python -m http.server 8000
-```
-
-Åpne deretter http://localhost:8000.
-
-## Rediger
-
-- `index.html`: struktur, tekst, behandlingsmeny og bookinglenker.
-- `style.css`: farger, skrifter og responsivt oppsett.
-- `app.js`: karusell, behandlingsbeskrivelser og dialoger.
-- `assets/`: lokale bilder.
-
-Alle ressursstier er relative og fungerer også når siden ligger under et repository-navn på GitHub Pages.
-
-Booking går til https://hudpleiesvoren.bestille.no/OnCust2/#!/ og håndteres av Bestille.no. Ingen bestillinger lagres på nettsiden. Priser, kontaktinformasjon og egne salongbilder kan legges til senere. Bildene som følger med er stemningsbilder, ikke dokumentasjon av behandlingsresultater.
-
-Denne eksporten inneholder siste versjon med navyblå logo, SVG-ikoner, fem behandlingskategorier i karusellen og uten negledesigner.
+Nettsiden lenker fortsatt til Hano. Prisene er et utvalg og oppdateres manuelt.
+Komplett kategorisert prisliste og automatisk synkronisering er ikke implementert.
+Ingen hostingnøkler, Git-historikk eller interne konfigurasjonsfiler er inkludert.
